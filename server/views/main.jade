@@ -1,0 +1,126 @@
+extends layout
+
+block head
+	script(src='/js/unclefucker.js')
+
+block content
+
+	section.hero.is-danger
+		div.hero-body
+			div.container
+				h1.title Unclefucker
+				h2.subtitle The antisocial network
+		div.hero-foot
+			div.container
+				div.tabs.is-boxed
+					ul#main-nav
+						li.tab-stream.is-active
+							a(data-tab="tab-stream") Stream
+						li.tab-post
+							a(data-tab="tab-post") Post
+						li.tab-contacts
+							a(data-tab="tab-contacts") People
+						li.tab-profile
+							a(data-tab="tab-profile") Profile
+
+	div.container.tab.tab-post
+		div.tabs
+			ul
+				li.is-active
+					a Friends
+				li
+					a Everyone
+		p.control
+			textarea.textarea#content
+		div.control.is-grouped
+			p.control
+				button.button Add image
+			p.control
+				button.button.is-success Post to friends
+
+	div.container.tab.tab-stream
+		div.tabs
+			ul
+				li.is-active
+					a Friends
+				li
+					a Following
+				li
+					a Followers
+		div.box
+			article.media
+				div.media-left
+					figure.image.is-64x64
+						img(src="http://placehold.it/128x128" alt="Image")
+				div.media-content
+					div.content
+						p <strong>Huge Facktard</strong> @factard 17m
+						| For fuck's sake why is my boss such a huge bowl of dicks?
+					p.control
+						a.button.is-success 
+							span.icon
+								i.fa.fa-reply
+							span Reply 
+
+		div.box
+			article.media
+				div.media-left
+					figure.image.is-64x64
+						img(src="http://placehold.it/128x128" alt="Image")
+				div.media-content
+					div.content
+						p <strong>I Hate Sharon</strong> @jentastic 31m
+						| Anyone else want to bunk off and go see The Losers with me. Going to gateway at 2.30
+					p.control
+						a.button.is-success 
+							span.icon
+								i.fa.fa-reply
+							span Reply 
+							
+		div.box
+			article.media
+				div.media-left
+					figure.image.is-64x64
+						img(src="http://placehold.it/128x128" alt="Image")
+				div.media-content
+					div.content
+						p <strong>Slobbering Cock</strong> @mikey_m 31m
+						| Haha thanks for all the drama, micropenis.
+					p.control
+						a.button.is-success 
+							span.icon
+								i.fa.fa-reply
+							span Reply 
+
+	div.container.tab.tab-contacts
+		div.tabs
+			ul
+				li.is-active
+					a Friends
+				li
+					a People I follow
+				li
+					a People who follow me
+				li
+					a Add
+		div.box
+			article.media
+				div.media-left
+					figure.image.is-64x64
+						img(src="http://placehold.it/128x128" alt="Image")
+				div.media-content
+					div.content
+						p <strong>John Smith</strong> @johnsmith
+					p.control
+						button.button.is-success Follow
+
+
+	div.container.tab.tab-profile
+		p.control.has-icon.has-icon-right
+			input.input.is-success(type="text" placeholder="Text input" value="bulma")
+			i.fa.fa-check
+			span.help.is-success This username is available
+
+		p avatar
+
+		a.button Logout 

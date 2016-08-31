@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "module": "system",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outDir": "../../server/public/js",
+        "outFile": "../../server/public/js/unclefucker.js",
+        "sourceMap": true,
+        "target": "ES5"
+    },
+    "files": [
+        "../references.ts"
+    ]
+}
