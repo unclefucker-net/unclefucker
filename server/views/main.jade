@@ -1,6 +1,7 @@
 extends layout
 
 block head
+	script(src='/js/vue.min.js')
 	script(src='/js/unclefucker.js')
 
 block content
@@ -31,12 +32,12 @@ block content
 				li
 					a Everyone
 		p.control
-			textarea.textarea#content
+			textarea.textarea#post-content
 		div.control.is-grouped
 			p.control
 				button.button Add image
 			p.control
-				button.button.is-success Post to friends
+				button.button.is-success#post Post to friends
 
 	div.container.tab.tab-stream
 		div.tabs
@@ -47,50 +48,23 @@ block content
 					a Following
 				li
 					a Followers
-		div.box
-			article.media
-				div.media-left
-					figure.image.is-64x64
-						img(src="http://placehold.it/128x128" alt="Image")
-				div.media-content
-					div.content
-						p <strong>Huge Facktard</strong> @factard 17m
-						| For fuck's sake why is my boss such a huge bowl of dicks?
-					p.control
-						a.button.is-success 
-							span.icon
-								i.fa.fa-reply
-							span Reply 
 
-		div.box
-			article.media
-				div.media-left
-					figure.image.is-64x64
-						img(src="http://placehold.it/128x128" alt="Image")
-				div.media-content
-					div.content
-						p <strong>I Hate Sharon</strong> @jentastic 31m
-						| Anyone else want to bunk off and go see The Losers with me. Going to gateway at 2.30
-					p.control
-						a.button.is-success 
-							span.icon
-								i.fa.fa-reply
-							span Reply 
-							
-		div.box
-			article.media
-				div.media-left
-					figure.image.is-64x64
-						img(src="http://placehold.it/128x128" alt="Image")
-				div.media-content
-					div.content
-						p <strong>Slobbering Cock</strong> @mikey_m 31m
-						| Haha thanks for all the drama, micropenis.
-					p.control
-						a.button.is-success 
-							span.icon
-								i.fa.fa-reply
-							span Reply 
+		div#stream
+			div.box(v-for="post in posts")
+				article.media
+					div.media-left
+						figure.image.is-64x64
+							img(src="http://placehold.it/128x128" alt="Image")
+					div.media-content
+						div.content
+							p <strong>Huge Facktard</strong> @factard 17m
+							| {{ post.text }}
+						p.control
+							a.button.is-success 
+								span.icon
+									i.fa.fa-reply
+								span Reply 
+
 
 	div.container.tab.tab-contacts
 		div.tabs
